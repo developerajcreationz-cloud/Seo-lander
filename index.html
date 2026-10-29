@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=5">
+  <link rel="stylesheet" href="styles.css?v=6">
 
   <script type="application/ld+json">
   {
@@ -210,57 +210,81 @@
     <div class="sec__head" data-rv>
       <span class="eyebrow">Proof, not promises</span>
       <h2>Real Search Console <i>results</i>.</h2>
-      <p class="sub">Straight from Google Search Console — last 6 months compared with the previous 6 months. Drag, swipe or use the arrows. Click any screenshot to enlarge.</p>
+      <p class="sub">Straight from Google Search Console — the last 6 months compared with the previous 6 months. Pick a project, flip between views and click any screenshot to enlarge.</p>
+    </div>
+
+    <div class="proof" data-rv>
+      <div><b data-count="144" data-prefix="+" data-suffix="%">+144%</b><span>Best click growth</span></div>
+      <div><b data-count="247" data-prefix="+" data-suffix="%">+247%</b><span>Best impression growth</span></div>
+      <div><b data-count="359" data-suffix="k">359k</b><span>Google AI impressions across 3 projects</span></div>
+      <div><b data-count="3" data-suffix="/3">3/3</b><span>Projects now surfaced in Google AI</span></div>
     </div>
 
     <div class="slider" id="slider" data-rv>
+      <div class="ptabs" id="ptabs" role="tablist" aria-label="Choose project">
+        <button role="tab" class="on"><b>Project A</b><span>+119% clicks · 311k AI impr.</span></button>
+        <button role="tab"><b>Project B</b><span>+144% clicks · +247% impr.</span></button>
+        <button role="tab"><b>Project C</b><span>0 → 20.5k AI impr.</span></button>
+      </div>
       <div class="slider__track" id="track" tabindex="0" aria-label="Project results">
-
         <article data-spot class="slide" aria-label="Project A">
           <div class="slide__meta">
             <span class="tag tag--blue">Project A</span>
             <h3>Doubled organic traffic and became a source for Google AI</h3>
-            <div class="kpis">
-              <div><b>11.2k</b><span>Clicks <em>vs 5.11k</em></span><i>+119%</i></div>
-              <div><b>297k</b><span>Impressions <em>vs 134k</em></span><i>+122%</i></div>
-              <div><b>13.9</b><span>Avg. position <em>vs 18.3</em></span><i>▲ 4.4</i></div>
-              <div><b>311k</b><span>AI impressions <em>vs 0</em></span><i>New</i></div>
+            <div class="kpi-list"><div class="kpi"><div class="kpi__top"><span>Clicks</span><i>+119%</i></div><b data-num>11.2k</b>
+                <div class="cmp"><div class="cmp__row"><em>Before</em><span class="bar"><s style="--w:46%"></s></span><u>5.11k</u></div>
+                <div class="cmp__row cmp__row--now"><em>Now</em><span class="bar"><s style="--w:100%"></s></span><u>11.2k</u></div></div></div><div class="kpi"><div class="kpi__top"><span>Impressions</span><i>+122%</i></div><b data-num>297k</b>
+                <div class="cmp"><div class="cmp__row"><em>Before</em><span class="bar"><s style="--w:45%"></s></span><u>134k</u></div>
+                <div class="cmp__row cmp__row--now"><em>Now</em><span class="bar"><s style="--w:100%"></s></span><u>297k</u></div></div></div><div class="kpi"><div class="kpi__top"><span>Avg. position</span><i>▲ 4.4 places</i></div><b data-num>13.9</b>
+                <div class="cmp"><div class="cmp__row"><em>Before</em><span class="bar"><s style="--w:100%"></s></span><u>18.3</u></div>
+                <div class="cmp__row cmp__row--now"><em>Now</em><span class="bar"><s style="--w:76%"></s></span><u>13.9</u></div></div></div><div class="kpi"><div class="kpi__top"><span>Google AI impressions</span><i>New</i></div><b data-num>311k</b>
+                <div class="cmp"><div class="cmp__row"><em>Before</em><span class="bar"><s style="--w:0%"></s></span><u>0</u></div>
+                <div class="cmp__row cmp__row--now"><em>Now</em><span class="bar"><s style="--w:100%"></s></span><u>311k</u></div></div></div></div>
+          </div>
+          <div class="slide__vis">
+            <div class="seg" role="tablist"><button type="button" class="on" data-i="0">Search performance</button><button type="button" class="" data-i="1">Google AI impressions</button></div>
+            <div class="frame">
+              <div class="frame__bar"><span></span><span></span><span></span><em>Google Search Console · Performance</em></div>
+              <button class="shot" data-full="assets/results/project-a-search.png" aria-label="Enlarge screenshot"><img class="on" src="assets/results/project-a-search.png" alt="Search Console performance: 11.2k clicks and 297k impressions in the last 6 months, up from 5.11k and 134k" loading="lazy" draggable="false"><img class="" src="assets/results/project-a-ai-impressions.png" alt="Search Console Generative AI report showing 311k impressions versus 0 previously" loading="lazy" draggable="false"><span class="zoom">Click to enlarge</span></button>
             </div>
           </div>
-          <div class="slide__shots">
-            <figure><button class="shot" data-full="assets/results/project-a-search.png"><img src="assets/results/project-a-search.png" alt="Search Console performance: 11.2k clicks and 297k impressions in the last 6 months, up from 5.11k and 134k" loading="lazy" draggable="false"></button><figcaption>Search performance</figcaption></figure>
-            <figure><button class="shot" data-full="assets/results/project-a-ai-impressions.png"><img src="assets/results/project-a-ai-impressions.png" alt="Search Console Generative AI report showing 311k impressions versus 0 previously" loading="lazy" draggable="false"></button><figcaption>Generative AI impressions</figcaption></figure>
-          </div>
         </article>
-
         <article data-spot class="slide" aria-label="Project B">
           <div class="slide__meta">
             <span class="tag tag--green">Project B</span>
             <h3>2.4× the clicks and 3.5× the impressions</h3>
-            <div class="kpis">
-              <div><b>4.22k</b><span>Clicks <em>vs 1.73k</em></span><i>+144%</i></div>
-              <div><b>206k</b><span>Impressions <em>vs 59.3k</em></span><i>+247%</i></div>
-              <div><b>10.7</b><span>Avg. position <em>vs 11.2</em></span><i>▲ 0.5</i></div>
-              <div><b>27.5k</b><span>AI impressions <em>vs 0</em></span><i>New</i></div>
+            <div class="kpi-list"><div class="kpi"><div class="kpi__top"><span>Clicks</span><i>+144%</i></div><b data-num>4.22k</b>
+                <div class="cmp"><div class="cmp__row"><em>Before</em><span class="bar"><s style="--w:41%"></s></span><u>1.73k</u></div>
+                <div class="cmp__row cmp__row--now"><em>Now</em><span class="bar"><s style="--w:100%"></s></span><u>4.22k</u></div></div></div><div class="kpi"><div class="kpi__top"><span>Impressions</span><i>+247%</i></div><b data-num>206k</b>
+                <div class="cmp"><div class="cmp__row"><em>Before</em><span class="bar"><s style="--w:29%"></s></span><u>59.3k</u></div>
+                <div class="cmp__row cmp__row--now"><em>Now</em><span class="bar"><s style="--w:100%"></s></span><u>206k</u></div></div></div><div class="kpi"><div class="kpi__top"><span>Avg. position</span><i>▲ 0.5 places</i></div><b data-num>10.7</b>
+                <div class="cmp"><div class="cmp__row"><em>Before</em><span class="bar"><s style="--w:100%"></s></span><u>11.2</u></div>
+                <div class="cmp__row cmp__row--now"><em>Now</em><span class="bar"><s style="--w:96%"></s></span><u>10.7</u></div></div></div><div class="kpi"><div class="kpi__top"><span>Google AI impressions</span><i>New</i></div><b data-num>27.5k</b>
+                <div class="cmp"><div class="cmp__row"><em>Before</em><span class="bar"><s style="--w:0%"></s></span><u>0</u></div>
+                <div class="cmp__row cmp__row--now"><em>Now</em><span class="bar"><s style="--w:100%"></s></span><u>27.5k</u></div></div></div></div>
+          </div>
+          <div class="slide__vis">
+            <div class="seg" role="tablist"><button type="button" class="on" data-i="0">Search performance</button><button type="button" class="" data-i="1">Google AI impressions</button></div>
+            <div class="frame">
+              <div class="frame__bar"><span></span><span></span><span></span><em>Google Search Console · Performance</em></div>
+              <button class="shot" data-full="assets/results/project-b-search.png" aria-label="Enlarge screenshot"><img class="on" src="assets/results/project-b-search.png" alt="Search Console performance: 4.22k clicks and 206k impressions, up from 1.73k and 59.3k" loading="lazy" draggable="false"><img class="" src="assets/results/project-b-ai-impressions.png" alt="Search Console Generative AI report showing 27.5k impressions versus 0 previously" loading="lazy" draggable="false"><span class="zoom">Click to enlarge</span></button>
             </div>
           </div>
-          <div class="slide__shots">
-            <figure><button class="shot" data-full="assets/results/project-b-search.png"><img src="assets/results/project-b-search.png" alt="Search Console performance: 4.22k clicks and 206k impressions, up from 1.73k and 59.3k" loading="lazy" draggable="false"></button><figcaption>Search performance</figcaption></figure>
-            <figure><button class="shot" data-full="assets/results/project-b-ai-impressions.png"><img src="assets/results/project-b-ai-impressions.png" alt="Search Console Generative AI report showing 27.5k impressions versus 0 previously" loading="lazy" draggable="false"></button><figcaption>Generative AI impressions</figcaption></figure>
-          </div>
         </article>
-
         <article data-spot class="slide" aria-label="Project C">
           <div class="slide__meta">
             <span class="tag tag--amber">Project C</span>
             <h3>From zero to 20.5k AI impressions</h3>
-            <div class="kpis">
-              <div><b>20.5k</b><span>AI impressions <em>vs 0</em></span><i>New</i></div>
-              <div><b>6 mo</b><span>Steady upward trend</span><i>▲</i></div>
-            </div>
+            <div class="kpi-list"><div class="kpi"><div class="kpi__top"><span>Google AI impressions</span><i>New</i></div><b data-num>20.5k</b>
+                <div class="cmp"><div class="cmp__row"><em>Before</em><span class="bar"><s style="--w:0%"></s></span><u>0</u></div>
+                <div class="cmp__row cmp__row--now"><em>Now</em><span class="bar"><s style="--w:100%"></s></span><u>20.5k</u></div></div></div></div><p class="slide__note">Impressions climbed steadily across the full six months, with no drop-off after the first citations.</p>
           </div>
-          <div class="slide__shots slide__shots--one">
-            <figure><button class="shot" data-full="assets/results/project-c-ai-impressions.png"><img src="assets/results/project-c-ai-impressions.png" alt="Search Console Generative AI report showing 20.5k impressions versus 0 previously" loading="lazy" draggable="false"></button><figcaption>Generative AI impressions</figcaption></figure>
+          <div class="slide__vis">
+            
+            <div class="frame">
+              <div class="frame__bar"><span></span><span></span><span></span><em>Google Search Console · Performance</em></div>
+              <button class="shot" data-full="assets/results/project-c-ai-impressions.png" aria-label="Enlarge screenshot"><img class="on" src="assets/results/project-c-ai-impressions.png" alt="Search Console Generative AI report showing 20.5k impressions versus 0 previously" loading="lazy" draggable="false"><span class="zoom">Click to enlarge</span></button>
+            </div>
           </div>
         </article>
       </div>
@@ -375,6 +399,6 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
-<script src="script.js?v=5"></script>
+<script src="script.js?v=6"></script>
 </body>
 </html>

@@ -141,6 +141,30 @@
   /* ---------- results slider ---------- */
   var track = $('#track'), slides = $$('.slide'), dotsEl = $('#dots');
   var prev = $('#prev'), next = $('#next'), idx = 0;
+  var ptabs = $$('#ptabs button');
+  ptabs.forEach(function (t, i) { t.addEventListener('click', function () { go(i); }); });
+  function countNum(el) {
+    var m = /^([\d.]+)(.*)$/.exec(el.textContent.trim());
+    if (!m || reduce) return;
+    var end = parseFloat(m[1]), dec = (m[1].split('.')[1] || '').length, suf = m[2], t0 = performance.now();
+    (function tick(now) {
+      var p = Math.min((now - t0) / 1100, 1), v = end * (1 - Math.pow(1 - p, 3));
+      el.textContent = v.toFixed(dec) + suf;
+      if (p < 1) requestAnimationFrame(tick);
+    })(t0);
+  }
+  // view toggle inside each slide
+  slides.forEach(function (s) {
+    var btns = $$('.seg button', s), imgs = $$('.shot img', s), shot = $('.shot', s);
+    btns.forEach(function (b) {
+      b.addEventListener('click', function () {
+        var i = +b.dataset.i;
+        btns.forEach(function (x, j) { x.classList.toggle('on', j === i); });
+        imgs.forEach(function (x, j) { x.classList.toggle('on', j === i); });
+        shot.dataset.full = imgs[i].getAttribute('src');
+      });
+    });
+  });
   slides.forEach(function (s, i) {
     var d = document.createElement('button');
     d.setAttribute('aria-label', 'Go to project ' + (i + 1));
@@ -162,6 +186,9 @@
     idx = best;
     slides.forEach(function (s, i) { s.classList.toggle('is-active', i === idx); });
     dots.forEach(function (d, i) { d.classList.toggle('on', i === idx); });
+    ptabs.forEach(function (t, i) { t.classList.toggle('on', i === idx); });
+    var act = slides[idx];
+    if (act && !act.dataset.counted) { act.dataset.counted = 1; $$('[data-num]', act).forEach(countNum); }
     prev.disabled = idx === 0; next.disabled = idx === slides.length - 1;
   }
   track.addEventListener('scroll', sync, { passive: true });
@@ -196,7 +223,7 @@
     b.addEventListener('click', function (e) {
       if (moved) { e.preventDefault(); moved = false; return; }
       lbImg.src = b.dataset.full;
-      lbImg.alt = $('img', b).alt;
+      lbImg.alt = ($('img.on', b) || $('img', b)).alt;
       lb.hidden = false;
       if (lenis) lenis.stop();
     });
