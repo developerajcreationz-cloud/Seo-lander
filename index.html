@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=7">
+  <link rel="stylesheet" href="styles.css?v=9">
 
   <script type="application/ld+json">
   {
@@ -51,6 +51,7 @@
 <body>
 
 <a class="skip" href="#main">Skip to content</a>
+<div class="topbar"><span class="dot"></span>Free SEO + AI visibility audit for new clients <a href="#contact">Claim yours →</a></div>
 <div class="progress" id="progress" aria-hidden="true"></div>
 
 <header class="nav" id="nav">
@@ -81,8 +82,12 @@
       <span class="ln"><span>AI search.</span></span>
     </h1>
     <p class="lead">We combine SEO, AEO and GEO to grow your rankings, win the featured answer and get your brand cited by ChatGPT, Gemini and Perplexity — with results you can verify in Search Console.</p>
-    <a href="#contact" class="btn btn--dark btn--lg" data-magnet>Get your free audit <span class="arr" aria-hidden="true">→</span></a>
-    <p class="fine">Free audit · Delivered in 48 hours · No card needed</p>
+    <form class="hform" id="heroForm" novalidate>
+      <input type="email" name="email" placeholder="Enter your work email" aria-label="Work email" autocomplete="email" required>
+      <button class="btn btn--dark" type="submit">Get free audit <span class="arr" aria-hidden="true">→</span></button>
+    </form>
+    <p class="hero__alt"><a href="#results" class="ghostlink">See real results ↓</a></p>
+    <div class="trust"><span class="avs" aria-hidden="true"><i></i><i></i><i></i></span><p>An SEO specialist replies within one business day. <b>No lock-in · Reported from your own Search Console.</b></p></div>
   </div>
 
   <div class="hcard hcard--l" data-depth="-0.06" aria-hidden="true">
@@ -201,6 +206,7 @@
         </div>
       </article>
     </div>
+    <div class="cband cband--dark" data-rv><p><b>Not sure which layer to start with?</b> We’ll map SEO, AEO and GEO for your business in a free audit.</p><a class="btn btn--dark" href="#contact">Get my free audit <span class="arr" aria-hidden="true">→</span></a></div>
   </div>
 </section>
 
@@ -298,6 +304,7 @@
       </div>
     </div>
     <p class="note">Results are client-specific and depend on market, competition and starting point. Past performance does not guarantee future results.</p>
+    <div class="cband " data-rv><p><b>Want results like these?</b> Start with a free audit and see where your biggest gains are.</p><a class="btn btn--dark" href="#contact">See what’s possible <span class="arr" aria-hidden="true">→</span></a></div>
   </div>
 </section>
 
@@ -314,6 +321,7 @@
       <li data-spot><span>03</span><h3>Build &amp; optimise</h3><p>Fixes, content, schema and authority-building shipped on a steady monthly cadence.</p></li>
       <li data-spot><span>04</span><h3>Measure &amp; scale</h3><p>Track clicks, rankings and AI citations — then double down on what works.</p></li>
     </ol>
+    <div class="cband cband--dark" data-rv><p><b>Step 1 is free.</b> Get the audit first and decide after you see the plan.</p><a class="btn btn--dark" href="#contact">Start with the audit <span class="arr" aria-hidden="true">→</span></a></div>
   </div>
 </section>
 
@@ -332,6 +340,15 @@
       <div class="feat" data-spot data-rv data-delay="1"><span class="ico ico--r"></span><h3>White-hat only</h3><p>Sustainable tactics that follow Google’s guidelines and survive algorithm updates.</p></div>
       <div class="feat" data-spot data-rv data-delay="2"><span class="ico ico--g"></span><h3>Senior-led team</h3><p>Strategists, technical SEOs and writers working directly with you — not hand-offs to juniors.</p></div>
     </div>
+    <div class="vs" data-rv>
+      <div class="vs__row vs__row--h"><span></span><b>SEO only</b><b class="vs__w">SEO + AEO + GEO with us</b></div>
+      <div class="vs__row"><span>Visibility</span><p>Blue links on Google</p><p class="vs__w">Google, featured answers &amp; AI assistants</p></div>
+      <div class="vs__row"><span>Content</span><p>Keywords and word counts</p><p class="vs__w">Answer-first pages built to be cited</p></div>
+      <div class="vs__row"><span>Authority</span><p>Backlinks</p><p class="vs__w">Entity, schema &amp; third-party mentions</p></div>
+      <div class="vs__row"><span>Measurement</span><p>Rankings reports</p><p class="vs__w">Clicks, impressions &amp; AI impressions in Search Console</p></div>
+      <div class="vs__row"><span>Reporting</span><p>Monthly PDF</p><p class="vs__w">Live roadmap you can see and question</p></div>
+    </div>
+    <div class="cband " data-rv><p><b>Ready to be found everywhere your buyers search?</b> Free audit, no lock-in.</p><a class="btn btn--dark" href="#contact">Get my free audit <span class="arr" aria-hidden="true">→</span></a></div>
   </div>
 </section>
 
@@ -350,6 +367,7 @@
       <details data-spot><summary>Which industries do you work with?</summary><div><p>B2B SaaS, ecommerce, local and service businesses, healthcare and professional services. Every strategy is built around your market and buyer questions.</p></div></details>
       <details data-spot><summary>What does it cost?</summary><div><p>Engagements are scoped to your goals and competition. Book a free audit and we’ll recommend a plan with a fixed monthly investment.</p></div></details>
     </div>
+    <div class="cband cband--dark" data-rv><p><b>Still have a question?</b> Ask a specialist — we reply within one business day.</p><a class="btn btn--dark" href="#contact">Ask a specialist <span class="arr" aria-hidden="true">→</span></a></div>
   </div>
 </section>
 
@@ -379,6 +397,8 @@
       </label>
       <button class="btn btn--dark btn--lg" type="submit">Request my free audit <span class="arr" aria-hidden="true">→</span></button>
       <p class="form__msg" id="formMsg" role="status" aria-live="polite"></p>
+      <ul class="assure"><li>Takes 30 seconds</li><li>No lock-in</li><li>We never share your details</li></ul>
+      <ol class="next" hidden><li><b>We review</b> your site within 1 business day</li><li><b>You get</b> a short audit with your biggest SEO, AEO and GEO opportunities</li><li><b>You decide</b> — fixed quote, no obligation</li></ol>
     </form>
   </div>
 </section>
@@ -393,12 +413,14 @@
   </div>
 </footer>
 
+<a class="fcta" id="fcta" href="#contact" aria-label="Get your free audit"><span class="dot"></span>Get free audit <span class="arr">→</span></a>
+
 <div class="lightbox" id="lightbox" hidden>
   <button class="lightbox__x" aria-label="Close image">×</button>
   <img alt="">
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
-<script src="script.js?v=7"></script>
+<script src="script.js?v=9"></script>
 </body>
 </html>
