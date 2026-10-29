@@ -546,7 +546,7 @@ figcaption{font-size:.78rem;color:var(--muted);margin-top:8px;text-align:center}
 .ps{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:.14em;font-style:normal;font-size:.26em;font-weight:600;letter-spacing:0;color:#fff;opacity:0;transform:translateY(100%);animation:pcycle 9s infinite;white-space:nowrap}
 .ps:nth-child(2){animation-delay:3s}.ps:nth-child(3){animation-delay:6s}
 .ps i{width:.5em;height:.5em;border-radius:50%;background:#C4A8FF;animation:pulse 2s infinite}
-@keyframes pcycle{0%{opacity:0;transform:translateY(100%)}5%,28%{opacity:1;transform:none}33%,100%{opacity:0;transform:translateY(-100%)}}
+@keyframes pcycle{0%{opacity:0;transform:translateY(100%)}4%,30%{opacity:1;transform:none}34%,100%{opacity:0;transform:translateY(-100%)}}
 .hero h1 i.hl{background:linear-gradient(transparent 58%,#E3D8FB 58%) 0 0/0 100% no-repeat;color:var(--blue);padding:0 .08em;animation:hlsw 1s 1.5s cubic-bezier(.2,.8,.2,1) forwards}
 @keyframes hlsw{to{background-size:100% 100%}}
 
@@ -629,3 +629,27 @@ figcaption{font-size:.78rem;color:var(--muted);margin-top:8px;text-align:center}
 .page-ghl .hero__copy{width:min(840px,100% - 40px)}
 .page-ghl .hero{padding-top:56px}
 .next[hidden]{display:none}
+
+/* ===== Physics drop (hero) ===== */
+.a2{font-size:.82rem;color:rgba(255,255,255,.8);line-height:1.5}
+.a2 b{color:#fff;background:rgba(122,76,183,.35);padding:0 6px;border-radius:6px}
+.lead-steps--on p{opacity:1;animation:none}
+.drop{display:none;position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+.hero.phys .drop{display:block}
+.hero.phys .hcard,.hero.phys .ftag{display:none}
+.dobj{position:absolute;left:0;top:0;pointer-events:auto;cursor:grab;user-select:none;-webkit-user-select:none;touch-action:none;opacity:0;will-change:transform;transition:opacity .15s}
+.dobj.on{opacity:1}
+.dobj.grab{cursor:grabbing;z-index:5}
+.dobj--card{width:250px}
+.dobj .hcard__in{transition:none}
+.dobj:hover .hcard__in{transform:none}
+.dtag{padding:11px 18px;border-radius:14px;background:#fff;border:1px solid var(--line);font-size:.78rem;font-weight:600;box-shadow:0 18px 40px -18px rgba(15,17,21,.45);white-space:nowrap}
+.dtag small{display:block;font-size:.62rem;text-transform:uppercase;letter-spacing:.1em;color:var(--blue)}
+.dtag--v{background:#EDE5FC;border-color:#D9C9F7}
+.dtag--p{background:var(--blue);color:#fff;border-color:transparent}
+.dtag--k{background:var(--ink);color:#fff;border-color:transparent;display:flex;align-items:center;gap:10px}
+.rdot{width:8px;height:8px;border-radius:50%;background:#C4A8FF;animation:pulse 2s infinite}
+.dcal{width:104px;background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;text-align:center;box-shadow:0 18px 40px -18px rgba(15,17,21,.45)}
+.dcal b{display:block;background:var(--blue);color:#fff;font-size:.68rem;letter-spacing:.12em;padding:6px 0}
+.dcal strong{display:block;font-size:1.5rem;font-weight:600;padding:8px 0 0;letter-spacing:-.02em}
+.dcal span{display:block;font-size:.7rem;color:var(--blue);font-weight:600;padding:0 0 10px}

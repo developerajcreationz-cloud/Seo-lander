@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=8">
+  <link rel="stylesheet" href="styles.css?v=9">
 
   <script type="application/ld+json">
   {
@@ -112,6 +112,28 @@
       <p class="a">Hi Sarah! Thanks for reaching out — I can book you in <b>Tuesday 10:00</b> or Wednesday 14:00. Which works best?</p>
       <span class="src">Booked → calendar synced</span>
     </div>
+  </div>
+
+  <div class="drop" id="drop" aria-hidden="true">
+    <div class="dobj dobj--card"><div class="hcard__in hcard__in--light">
+      <small>Website form · Free quote</small>
+      <div class="lead-row"><span class="av">SM</span><div><strong>Sarah Mitchell</strong><span>sarah@example.com</span></div></div>
+      <div class="lead-steps lead-steps--on"><p><i></i>Contact created &amp; tagged</p><p><i></i>Instant SMS + email sent</p><p><i></i>Added to “New lead” pipeline</p></div>
+      <em>Replied in 12 seconds</em>
+    </div></div>
+    <div class="dobj dobj--card"><div class="hcard__in hcard__in--dark">
+      <small>AI assistant · SMS</small>
+      <p class="q">“Hi, do you have availability this week?”</p>
+      <p class="a2">Hi Sarah! Thanks for reaching out — I can book you in <b>Tuesday 10:00</b> or Wednesday 14:00. Which works best?</p>
+      <span class="src">Booked → calendar synced</span>
+    </div></div>
+    <div class="dobj dtag">📞 Missed call → text-back sent ✓</div>
+    <div class="dobj dtag dtag--p">Pipeline: Won ✓</div>
+    <div class="dobj dcal"><b>TUE</b><strong>10:30</strong><span>Booked ✓</span></div>
+    <div class="dobj dtag">★★★★★ Review request sent</div>
+    <div class="dobj dtag dtag--v"><small>Booked</small>Thu 10:30 · Discovery call</div>
+    <div class="dobj dtag dtag--k"><i class="rdot"></i>Workflow running</div>
+    <div class="dobj dtag">⭐ 5.0 Google review</div>
   </div>
 
   <div class="ftag ftag--1" aria-hidden="true">📞 Missed call → text-back sent ✓</div>
@@ -454,6 +476,8 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
-<script src="script.js?v=8"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+<script src="script.js?v=9"></script>
+<script src="drop.js?v=9"></script>
 </body>
 </html>
