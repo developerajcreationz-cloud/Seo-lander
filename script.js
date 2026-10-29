@@ -205,6 +205,93 @@
   lb.addEventListener('click', closeLb);
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !lb.hidden) closeLb(); });
 
+
+  /* ---------- interactive extras ---------- */
+  var canHover = window.matchMedia('(hover:hover)').matches;
+
+  // spotlight follows pointer on cards
+  $$('[data-spot]').forEach(function (el) {
+    el.addEventListener('pointermove', function (e) {
+      var r = el.getBoundingClientRect();
+      el.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+      el.style.setProperty('--my', (e.clientY - r.top) + 'px');
+    });
+  });
+
+  // 3D tilt
+  if (!reduce && canHover) {
+    $$('[data-tilt]').forEach(function (el) {
+      el.addEventListener('pointermove', function (e) {
+        var r = el.getBoundingClientRect();
+        var x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
+        el.style.transform = 'perspective(900px) rotateY(' + (x * 10) + 'deg) rotateX(' + (-y * 10) + 'deg) translateZ(0)';
+      });
+      el.addEventListener('pointerleave', function () { el.style.transform = ''; });
+    });
+  }
+
+  // button ripple
+  $$('.btn').forEach(function (b) {
+    b.addEventListener('click', function (e) {
+      var r = b.getBoundingClientRect(), s = Math.max(r.width, r.height) * 2;
+      var d = document.createElement('span');
+      d.className = 'ripple';
+      d.style.cssText = 'width:' + s + 'px;height:' + s + 'px;left:' + (e.clientX - r.left - s / 2) + 'px;top:' + (e.clientY - r.top - s / 2) + 'px';
+      b.appendChild(d);
+      setTimeout(function () { d.remove(); }, 700);
+    });
+  });
+
+  // cursor ring
+  if (!reduce && canHover) {
+    var ring = document.createElement('div');
+    ring.className = 'cursor';
+    document.body.appendChild(ring);
+    var cx = 0, cy = 0, tx = 0, ty = 0;
+    window.addEventListener('pointermove', function (e) { tx = e.clientX; ty = e.clientY; ring.classList.add('show'); });
+    document.addEventListener('pointerleave', function () { ring.classList.remove('show'); });
+    (function loop() {
+      cx += (tx - cx) * 0.18; cy += (ty - cy) * 0.18;
+      ring.style.transform = 'translate(' + cx + 'px,' + cy + 'px)';
+      requestAnimationFrame(loop);
+    })();
+    document.addEventListener('pointerover', function (e) {
+      ring.classList.toggle('big', !!e.target.closest('a,button,summary,.shot,[data-magnet]'));
+    });
+  }
+
+  // hero orbs follow mouse a little
+  var orbs = $$('.orb');
+  if (!reduce && canHover && hero) {
+    hero.addEventListener('mousemove', function (e) {
+      var x = e.clientX / window.innerWidth - 0.5, y = e.clientY / window.innerHeight - 0.5;
+      orbs.forEach(function (o, i) { o.style.translate = (x * (i ? -90 : 90)) + 'px ' + (y * 60) + 'px'; });
+    });
+  }
+
+  // AI answer typing loop
+  var ans = $('.a');
+  if (ans && !reduce) {
+    (function wrap(node) {
+      Array.prototype.slice.call(node.childNodes).forEach(function (n) {
+        if (n.nodeType === 3) {
+          var f = document.createDocumentFragment();
+          n.textContent.split('').forEach(function (c) {
+            var s = document.createElement('span'); s.className = 'ch'; s.textContent = c; f.appendChild(s);
+          });
+          node.replaceChild(f, n);
+        } else if (n.nodeType === 1) wrap(n);
+      });
+    })(ans);
+    var chars = $$('.ch', ans), k = 0;
+    function typeStep() {
+      ans.classList.add('typing');
+      if (k < chars.length) { chars[k++].classList.add('on'); setTimeout(typeStep, 28); }
+      else { ans.classList.remove('typing'); setTimeout(function () { chars.forEach(function (c) { c.classList.remove('on'); }); k = 0; setTimeout(typeStep, 600); }, 5000); }
+    }
+    setTimeout(typeStep, 1800);
+  }
+
   /* ---------- lead form ---------- */
   // TODO: point FORM_ENDPOINT at your form handler (Formspree, Make, Zapier, WordPress, etc.)
   var FORM_ENDPOINT = '';
