@@ -299,12 +299,12 @@ figcaption{font-size:.78rem;color:var(--muted);margin-top:8px;text-align:center}
 .steps span{color:var(--sa-mint)}
 
 /* faq (dark) */
-.faq details{background:var(--sa-glass);border-color:rgba(255,255,255,.1)}
-.faq details[open]{border-color:var(--sa-border);box-shadow:0 20px 60px -30px rgba(122,76,183,.7)}
-.faq summary{color:#fff}
-.faq summary::after{background:rgba(255,255,255,.08);color:#fff}
-.faq details[open] summary::after{background:var(--sa-mint);color:var(--sa-btn-ink)}
-.faq p{color:var(--sa-mute)}
+.dk .faq details{background:var(--sa-glass);border-color:rgba(255,255,255,.1)}
+.dk .faq details[open]{border-color:var(--sa-border);box-shadow:0 20px 60px -30px rgba(122,76,183,.7)}
+.dk .faq summary{color:#fff}
+.dk .faq summary::after{background:rgba(255,255,255,.08);color:#fff}
+.dk .faq details[open] summary::after{background:var(--sa-mint);color:var(--sa-btn-ink)}
+.dk .faq p{color:var(--sa-mute)}
 
 /* white sections: results + features keep light look, with Search Atlas accents */
 .sec--soft .eyebrow,.sec:not(.dk) .eyebrow{color:var(--sa-violet)}
@@ -653,3 +653,33 @@ figcaption{font-size:.78rem;color:var(--muted);margin-top:8px;text-align:center}
 .dcal b{display:block;background:var(--blue);color:#fff;font-size:.68rem;letter-spacing:.12em;padding:6px 0}
 .dcal strong{display:block;font-size:1.5rem;font-weight:600;padding:8px 0 0;letter-spacing:-.02em}
 .dcal span{display:block;font-size:.7rem;color:var(--blue);font-weight:600;padding:0 0 10px}
+
+/* ===== SEO + GHL nurture section ===== */
+.faq p a{color:var(--blue);font-weight:600}
+.nav__x{display:inline-flex;gap:4px;align-items:center}
+.nav__x span{font-size:.75rem;opacity:.6}
+.flow{list-style:none;margin:0 0 70px;padding:34px 0 0;display:grid;grid-template-columns:repeat(5,1fr);gap:16px;position:relative}
+.flow::before{content:"";position:absolute;left:5%;right:5%;top:15px;height:2px;background:rgba(255,255,255,.14)}
+.flow::after{content:"";position:absolute;top:9px;left:5%;width:14px;height:14px;border-radius:50%;background:var(--sa-mint);box-shadow:0 0 0 6px rgba(185,155,255,.25),0 0 24px rgba(185,155,255,.8);animation:fdot 10s linear infinite}
+@keyframes fdot{0%{left:5%}100%{left:calc(95% - 14px)}}
+.flow li{position:relative;padding:20px 18px;border:1px solid rgba(255,255,255,.1);border-radius:20px;background:var(--sa-glass);animation:fon 10s linear infinite;animation-delay:calc(var(--n) * 2s - 1s)}
+.flow li::before{content:"";position:absolute;top:-25px;left:50%;width:10px;height:10px;margin-left:-5px;border-radius:50%;background:#3A3F4A}
+.flow span{font-size:.72rem;font-weight:600;color:var(--sa-mint);letter-spacing:.1em}
+.flow h3{font-size:1rem;margin:4px 0 6px;color:#fff}
+.flow p{font-size:.82rem;color:var(--sa-mute);line-height:1.5}
+@keyframes fon{0%,20%{border-color:rgba(185,155,255,.7);background:rgba(185,155,255,.1);transform:translateY(-4px)}30%,100%{border-color:rgba(255,255,255,.1);background:var(--sa-glass);transform:none}}
+.why4__h{text-align:center;font-size:clamp(1.4rem,2.6vw,2rem);margin-bottom:28px;color:#fff;font-weight:600}
+.why4__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.why4{padding:26px;border:1px solid var(--sa-border);border-radius:22px;background:var(--sa-glass);transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s,opacity .8s;overflow:hidden}
+.why4.in:hover{transform:translateY(-8px);box-shadow:0 24px 60px -24px rgba(122,76,183,.7);border-color:rgba(170,133,236,.6)}
+.why4 h3{font-size:1.05rem;margin:18px 0 8px;color:#fff}
+.why4 p{font-size:.9rem;color:var(--sa-mute)}
+.why4 .ico::after{background:#0A0414}
+.cband--two{flex-wrap:wrap}
+.cband__btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn--ghost2{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.35)}
+.btn--ghost2:hover{background:#fff;color:var(--ink)}
+@media (max-width:1100px){.why4__grid{grid-template-columns:1fr 1fr}.flow{grid-template-columns:1fr 1fr 1fr}.flow::before,.flow::after{display:none}.flow li::before{display:none}.flow{padding-top:0}}
+@media (max-width:760px){.why4__grid,.flow{grid-template-columns:1fr}.cband__btns .btn{width:100%}.flow li{animation:none}}
+@media (prefers-reduced-motion:reduce){.flow li{animation:none}.flow::after{animation:none;display:none}}
+@media (min-width:981px){.cband--two{flex-wrap:nowrap}.cband--two p{flex:1}}
