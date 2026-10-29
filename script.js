@@ -319,6 +319,47 @@
     setTimeout(typeStep, 1800);
   }
 
+
+  /* ---------- CRO: tracking, hero form, floating CTA ---------- */
+  function trk(ev, data) {
+    window.dataLayer = window.dataLayer || [];
+    var o = { event: ev }; for (var k in (data || {})) o[k] = data[k];
+    window.dataLayer.push(o);
+  }
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a[href="#contact"],a[href="#services"],[data-cta]');
+    if (!a) return;
+    var sec = a.closest('section,header,footer,.topbar,.fcta');
+    trk('cta_click', { cta: a.dataset.cta || (sec && (sec.id || sec.className.split(' ')[0])) || 'page', label: a.textContent.trim().slice(0, 40) });
+  });
+  var heroForm = $('#heroForm');
+  if (heroForm) {
+    heroForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var inp = heroForm.elements.email, ok = /^\S+@\S+\.\S+$/.test(inp.value);
+      heroForm.classList.toggle('err', !ok);
+      if (!ok) { inp.focus(); return; }
+      trk('hero_email_captured');
+      var main = $('#leadForm');
+      if (main) { main.elements.email.value = inp.value; }
+      scrollToEl($('#contact'));
+      setTimeout(function () { if (main) main.elements.name.focus({ preventScroll: true }); }, 900);
+    });
+  }
+  var fcta = $('#fcta'), contactSec = $('#contact');
+  if (fcta && contactSec) {
+    var heroEl = $('.hero');
+    function fctaToggle() {
+      var y = window.pageYOffset, vh = window.innerHeight;
+      var cr = contactSec.getBoundingClientRect();
+      var show = y > vh * 0.8 && !(cr.top < vh * 0.7 && cr.bottom > 0);
+      fcta.classList.toggle('show', show);
+    }
+    window.addEventListener('scroll', fctaToggle, { passive: true });
+    if (lenis) lenis.on('scroll', fctaToggle);
+    fctaToggle();
+  }
+
   /* ---------- lead form ---------- */
   // TODO: point FORM_ENDPOINT at your form handler (Formspree, Make, Zapier, WordPress, etc.)
   var FORM_ENDPOINT = '';
@@ -335,6 +376,8 @@
     });
     if (!ok) { msg.textContent = 'Please enter your name and a valid email.'; msg.classList.add('bad'); return; }
     function done() {
+      var nx = $('.next', form); if (nx) nx.hidden = false;
+      trk('generate_lead', { form: 'audit' });
       msg.textContent = 'Thanks! We’ll send your audit within 1–2 business days.';
       msg.classList.add('ok');
       form.reset();

@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=7">
+  <link rel="stylesheet" href="styles.css?v=8">
 
   <script type="application/ld+json">
   {
@@ -48,9 +48,10 @@
   }
   </script>
 </head>
-<body>
+<body class="page-ghl">
 
 <a class="skip" href="#main">Skip to content</a>
+<div class="topbar"><span class="dot"></span>Free GoHighLevel automation audit for new clients <a href="#contact">Claim yours →</a></div>
 <div class="progress" id="progress" aria-hidden="true"></div>
 
 <header class="nav" id="nav">
@@ -74,15 +75,19 @@
 <section class="hero" id="top">
   <span class="orb orb--1" aria-hidden="true"></span><span class="orb orb--2" aria-hidden="true"></span>
   <div class="hero__copy">
-    <p class="kicker">GoHighLevel setup · CRM · Automation · AI</p>
+    <p class="kicker status"><span class="live"></span>GoHighLevel setup · CRM · Automation · AI</p>
     <h1 id="heroTitle">
-      <span class="ln"><span>Turn every lead into</span></span>
-      <span class="ln"><span>a <i>booked</i> customer —</span></span>
-      <span class="ln"><span><i>automatically.</i></span></span>
+      <span class="ln"><span>Turn every lead <b class="pill pill--a" aria-hidden="true"><em class="ps"><i></i>New lead</em><em class="ps">SMS sent ✓</em><em class="ps">Booked ✓</em></b> into</span></span>
+      <span class="ln"><span>a <i>booked</i> <b class="pill pill--b" aria-hidden="true"><em class="ps">Thu 10:30</em><em class="ps">Reminder ✓</em><em class="ps">5★ review</em></b> customer —</span></span>
+      <span class="ln"><span><i class="hl">automatically.</i></span></span>
     </h1>
     <p class="lead">We build your GoHighLevel system end to end — CRM, funnels, SMS and email follow-up, booking and AI assistants — so no enquiry is missed and your team only talks to people who are ready to buy.</p>
-    <a href="#contact" class="btn btn--dark btn--lg" data-magnet>Get your free audit <span class="arr" aria-hidden="true">→</span></a>
-    <p class="fine">Free automation audit · Own your account &amp; data · No lock-in</p>
+    <form class="hform" id="heroForm" novalidate>
+      <input type="email" name="email" placeholder="Enter your work email" aria-label="Work email" autocomplete="email" required>
+      <button class="btn btn--dark" type="submit">Get free audit <span class="arr" aria-hidden="true">→</span></button>
+    </form>
+    <p class="hero__alt"><a href="#services" class="ghostlink">See how it works ↓</a></p>
+    <div class="trust"><span class="avs" aria-hidden="true"><i></i><i></i><i></i></span><p>A GoHighLevel specialist replies within one business day. <b>No lock-in · You own your account.</b></p></div>
   </div>
 
   <div class="hcard hcard--l" data-depth="-0.06" aria-hidden="true">
@@ -108,6 +113,10 @@
       <span class="src">Booked → calendar synced</span>
     </div>
   </div>
+
+  <div class="ftag ftag--1" aria-hidden="true">📞 Missed call → text-back sent ✓</div>
+  <div class="ftag ftag--2" aria-hidden="true">★★★★★ Review request sent</div>
+  <div class="ftag ftag--3" aria-hidden="true"><small>Booked</small>Thu 10:30 · Discovery call</div>
 
   <div class="hero__stats">
     <div><b>24/7</b><span class="ul ul--red"></span><p>Lead follow-up</p></div>
@@ -217,6 +226,7 @@
         </div>
       </article>
     </div>
+    <div class="cband cband--dark" data-rv><p><b>Not sure which layer you need first?</b> We’ll map it for you in a free audit.</p><a class="btn btn--dark" href="#contact">Get my free audit <span class="arr" aria-hidden="true">→</span></a></div>
   </div>
 </section>
 
@@ -326,6 +336,7 @@
       </div>
     </div>
     <p class="note">Illustrative examples of typical setups. Your system is designed around your own offer, team and sales process.</p>
+    <div class="cband " data-rv><p><b>Don’t see your industry?</b> We build for any business that runs on leads and appointments.</p><a class="btn btn--dark" href="#contact">Talk to a specialist <span class="arr" aria-hidden="true">→</span></a></div>
   </div>
 </section>
 
@@ -342,6 +353,7 @@
       <li data-spot><span>03</span><h3>Launch &amp; train</h3><p>Go live with your data migrated, your team trained and clear documentation handed over.</p></li>
       <li data-spot><span>04</span><h3>Optimise</h3><p>We track speed-to-lead, bookings and revenue, then refine the automations that matter.</p></li>
     </ol>
+    <div class="cband cband--dark" data-rv><p><b>Step 1 is free.</b> Start with the audit and decide after you see the plan.</p><a class="btn btn--dark" href="#contact">Start with the audit <span class="arr" aria-hidden="true">→</span></a></div>
   </div>
 </section>
 
@@ -360,6 +372,15 @@
       <div class="feat" data-spot data-rv data-delay="1"><span class="ico ico--r"></span><h3>Training &amp; docs</h3><p>Short walkthrough videos and written guides so your team can use the system confidently.</p></div>
       <div class="feat" data-spot data-rv data-delay="2"><span class="ico ico--g"></span><h3>Ongoing support</h3><p>Optional monthly support to add workflows, fix issues and keep improving what converts.</p></div>
     </div>
+    <div class="vs" data-rv>
+      <div class="vs__row vs__row--h"><span></span><b>Without automation</b><b class="vs__w">With your GoHighLevel system</b></div>
+      <div class="vs__row"><span>First reply to a new lead</span><p>Hours or days</p><p class="vs__w">Seconds, automatically</p></div>
+      <div class="vs__row"><span>Follow-up</span><p>Manual, easy to forget</p><p class="vs__w">Timed SMS, email &amp; AI sequences</p></div>
+      <div class="vs__row"><span>Missed calls</span><p>Lost to a competitor</p><p class="vs__w">Instant text-back conversation</p></div>
+      <div class="vs__row"><span>Tools &amp; logins</span><p>5–8 disconnected apps</p><p class="vs__w">One platform, one login</p></div>
+      <div class="vs__row"><span>Reporting</span><p>Spreadsheets &amp; guesswork</p><p class="vs__w">Live pipeline &amp; source dashboards</p></div>
+    </div>
+    <div class="cband " data-rv><p><b>Ready to switch the leaks off?</b> Free audit, fixed quote, no lock-in.</p><a class="btn btn--dark" href="#contact">Get my free audit <span class="arr" aria-hidden="true">→</span></a></div>
   </div>
 </section>
 
@@ -378,6 +399,7 @@
       <details data-spot><summary>How long does setup take?</summary><div><p>A focused starter system (CRM, pipeline, lead capture and core follow-up automations) is typically live within one to two weeks. Larger builds with funnels, AI and migrations take longer and are scoped after a free audit.</p></div></details>
       <details data-spot><summary>Is SMS and email sending compliant?</summary><div><p>We configure consent capture, opt-out handling, A2P 10DLC registration where required, and email authentication so your messages are delivered and compliant with the rules in your market.</p></div></details>
     </div>
+    <div class="cband cband--dark" data-rv><p><b>Still have a question?</b> Ask a specialist — we reply within one business day.</p><a class="btn btn--dark" href="#contact">Ask a specialist <span class="arr" aria-hidden="true">→</span></a></div>
   </div>
 </section>
 
@@ -408,6 +430,8 @@
       </label>
       <button class="btn btn--dark btn--lg" type="submit">Request my free audit <span class="arr" aria-hidden="true">→</span></button>
       <p class="form__msg" id="formMsg" role="status" aria-live="polite"></p>
+      <ul class="assure"><li>Takes 30 seconds</li><li>No lock-in</li><li>We never share your details</li></ul>
+      <ol class="next" hidden><li><b>We review</b> your answers within 1 business day</li><li><b>You get</b> a short audit with recommended automations</li><li><b>You decide</b> — fixed quote, no obligation</li></ol>
     </form>
   </div>
 </section>
@@ -422,12 +446,14 @@
   </div>
 </footer>
 
+<a class="fcta" id="fcta" href="#contact" aria-label="Get your free audit"><span class="dot"></span>Get free audit <span class="arr">→</span></a>
+
 <div class="lightbox" id="lightbox" hidden>
   <button class="lightbox__x" aria-label="Close image">×</button>
   <img alt="">
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
-<script src="script.js?v=7"></script>
+<script src="script.js?v=8"></script>
 </body>
 </html>
